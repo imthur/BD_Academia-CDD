@@ -21,30 +21,32 @@ loop = True
 while loop:
     menu()
     choice = input("Digite o dígito da operação que deseja efetuar: ")
-    while True:
-        print("=" * 35)
-        print("Qual será o tipo de dado?")
-        print("=" * 35)
-        print("[1] Aluno")
-        print("[2] Funcionário")
-        print("[3] Modalidade")
-        print("[4] Personal")
-        print("=" * 35)
-        type = int(input("Digite aqui: "))
-        if type == 1:
-            table = "alunos"
-            break
-        if type == 2:
-            table = "funcionarios"
-            break
-        if type == 3:
-            table = "modalidades"
-            break
-        if type == 4:
-            table = "personal"
-            break
-        else:
-            print("Digite um dígito válido.")
+    #Tipo de Dado
+    if choice != "0":
+        while True:
+            print("=" * 35)
+            print("Qual será o tipo de dado?")
+            print("=" * 35)
+            print("[1] Aluno")
+            print("[2] Funcionário")
+            print("[3] Modalidade")
+            print("[4] Personal")
+            print("=" * 35)
+            type = int(input("Digite aqui: "))
+            if type == 1:
+                table = "alunos"
+                break
+            if type == 2:
+                table = "funcionarios"
+                break
+            if type == 3:
+                table = "modalidades"
+                break
+            if type == 4:
+                table = "personal"
+                break
+            else:
+                print("Insira um dígito válido.")
     #Inserir
     if choice == "1":
         if table == "alunos":
@@ -174,11 +176,12 @@ while loop:
                 print(f"CPF: {funcionario[2]}")
                 print(f"SALÁRIO: {funcionario[3]}")
                 print("=" * 35)
-    elif choice == "4":
+    #Sair
+    elif choice == "0":
         while True:
-            doubt = input("DESEJA SAIR? DIGITE 1 PARA CONFIRMAR OU 2 PARA VOLTAR AO MENU.")
+            doubt = input("DIGITE 1 PARA ENCERRAR OU 2 PARA VOLTAR AO MENU: ")
             if doubt != "1" and doubt != "2":
-                ...
+                print("Insira um dígito válido.")
             else:
                 break
         if doubt == "1":
